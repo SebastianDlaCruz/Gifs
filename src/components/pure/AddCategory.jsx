@@ -24,6 +24,7 @@ export const AddCategory = ({ addCategory, resetCategories }) => {
                 placeholder='Buscar Gif'
                 value={inputValue}
                 onChange={handleInputChange}
+                required
             />
             <input type="reset" value="reset" onClick={resetCategories} />
         </form>

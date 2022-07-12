@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { AddCategory } from "../pure/AddCategory";
 import { GifGrid } from '../pure/GifGrid'
-
+import ListCategory from "../pure/listCategory";
 
 const GifApp = () => {
   const [categories, setCategories] = useState([]);
@@ -24,21 +24,22 @@ const GifApp = () => {
   return (
     <>
       {/* Titulo */}
-      <h1 className="title">GifApp</h1>
+      <h1 className="title" id="titulo">GifApp</h1>
 
       {/* Input */}
       <AddCategory addCategory={handleAddCategory}
         resetCategories={handleResetCategory} />
       {/* Listado de Gif */}
 
+      <ListCategory name={categories} dele={handleDeleteCategory} />
+
       {
         categories.map((category) => (
-          <GifGrid key={category} category={category} dele={handleDeleteCategory} />
-
+          <GifGrid key={category} category={category} />
         ))
 
       }
-
+      <a href="#titulo" className="top">top</a>
     </>
   );
 };

@@ -2,15 +2,15 @@
 import { useFetchGif } from "../../hook/useFetchGif";
 import { GifItem } from "../pure/GifItem";
 import '../../css/gifApp.css';
-export const GifGrid = ({ category, dele }) => {
+export const GifGrid = ({ category }) => {
 
   const { imagenes, loading } = useFetchGif(category);
 
   return (
     <>
+
       <div className="contenedorCategoria">
         <h3>{category}</h3>
-        <button onClick={() => dele(category)}>eliminar</button>
       </div>
 
       {/* Desplegar Listado */}
